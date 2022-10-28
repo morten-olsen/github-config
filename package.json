@@ -1,0 +1,34 @@
+{
+  "name": "@0north/git-config",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@react-native-community/eslint-config": "^3.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@vercel/ncc": "^0.34.0",
+    "commitizen": "^4.2.5",
+    "eslint": "^8.26.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "bundle": "ncc build -t -s -o bundle src/runners/action.ts",
+    "dev": "yarn bundle -w"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@sinclair/typebox": "^0.24.51",
+    "ajv": "^8.11.0",
+    "fs-extra": "^10.1.0",
+    "octokit": "^2.0.10",
+    "yaml": "^2.1.3"
+  }
+}

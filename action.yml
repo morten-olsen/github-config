@@ -1,0 +1,25 @@
+name: GitHub Config
+description: Configure your GitHub repos using a configuration file inside the repo
+inputs:
+  config:
+    description: JSON string containing the config
+    required: false
+  config-path:
+    description: Location of the YAML configuration
+    required: false
+    default: .github/repo.yml
+  ref:
+    description: Only run on specific ref
+    required: false
+  github-token:
+    description: GitHub PAT for calling the API
+    required: true 
+    default: "${{ github.token }}"
+outputs:
+  before:
+    description: JSON string with the configuration before applying
+  after:
+    description: JSON string with the configuration after applying
+runs:
+  using: 'node16'
+  main: 'bundle/index.js'

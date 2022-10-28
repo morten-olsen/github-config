@@ -1,0 +1,9 @@
+general:
+  description: hello world
+  wikis: false
+  issues: true
+  projects: false
+  visibility: public
+branches:
+  - name: 'test'
+    requiresLinearHistory: true
