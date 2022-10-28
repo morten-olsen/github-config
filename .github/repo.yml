@@ -1,0 +1,4 @@
+general:
+  description: hello world
+branches:
+  - pattern: 'foo-*'
